@@ -1,0 +1,324 @@
+/* =========================
+   LensBook - style.css
+========================= */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:#fff;
+    line-height:1.6;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,.9);
+    z-index:1000;
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+}
+
+.logo{
+    color:#d4af37;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo i{
+    margin-right:8px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin-left:25px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:500;
+}
+
+.nav-links a:hover{
+    color:#d4af37;
+}
+
+.menu-btn{
+    display:none;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+    height:100vh;
+    background:url("../images/hero.jpg") center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.6);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+}
+
+.hero h1{
+    font-size:58px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#d4af37;
+    color:#111;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:translateY(-4px);
+}
+
+/* =========================
+   Sections
+========================= */
+
+section{
+    padding:90px 8%;
+}
+
+section h2{
+    text-align:center;
+    color:#d4af37;
+    margin-bottom:45px;
+    font-size:36px;
+}
+
+/* =========================
+   Services
+========================= */
+
+.service-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#1b1b1b;
+    padding:35px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card i{
+    font-size:45px;
+    color:#d4af37;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* =========================
+   Gallery
+========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   Booking Form
+========================= */
+
+.booking form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.booking input,
+.booking select,
+.booking textarea{
+    margin:12px 0;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.booking textarea{
+    resize:none;
+    height:140px;
+}
+
+.booking button{
+    margin-top:15px;
+    padding:15px;
+    background:#d4af37;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.booking button:hover{
+    background:#fff;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.social{
+    margin:20px 0;
+}
+
+.social i{
+    font-size:22px;
+    margin:0 10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.social i:hover{
+    color:#d4af37;
+}
+
+/* =========================
+   Dashboard Cards
+========================= */
+
+.dashboard-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.dashboard-card{
+    background:#1b1b1b;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.dashboard-card h3{
+    color:#d4af37;
+    margin-bottom:10px;
+}
+
+.dashboard-card span{
+    font-size:35px;
+    font-weight:bold;
+}
+
+/* =========================
+   Animations
+========================= */
+
+.card,
+.gallery-grid img,
+.btn{
+    transition:.4s ease;
+}
+
+.fade{
+    animation:fade 1s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
